@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link,BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -16,13 +16,12 @@ function App() {
   return (
     <Router>
       <Navbar mode={mode} toogleMode={toogleMode}></Navbar>
-      <Switch>
-        <Route path="/about" component={About}>
-        </Route>
-        <Route path="/">
+      <BrowserRouter>
+        <Route  path="/about" component={About} />
+        <Route exact path="/">
           <TextArea></TextArea>
         </Route>
-      </Switch>
+      </BrowserRouter>
       {/* <>
       <TextArea></TextArea>
     </> */}
